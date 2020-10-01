@@ -1,0 +1,166 @@
+header > span {
+  width: auto;
+  display: flex;
+}
+
+.title {
+  padding-left: 2.5rem;
+}
+
+.chat {
+  margin: 10rem 0;
+}
+
+.chat_list {
+  height: 12.5rem;
+  /* background-color: rgb(247, 247, 247); */
+  display: flex;
+}
+
+.chat_list_photo {
+  width: 8.5rem;
+  height: 8.5rem;
+  background: url(../img/myPhoto.jpg) no-repeat;
+  background-size: contain;
+  margin: 2rem 2.5rem;
+  /* border: 0.3rem solid rgb(231, 232, 232);
+  border-radius: 1rem; */
+}
+
+.chat_list_info {
+  padding: 2.5rem;
+  padding-left: 0;
+  border-bottom: 0.2rem solid rgb(237, 237, 237);
+  flex-grow: 1;
+}
+
+.chat_list_info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat_list_info_name {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.chat_list_info_time {
+  font-size: 1.8rem;
+  color: rgb(192, 192, 192);
+}
+
+.chat_list_info_message {
+  font-size: 2rem;
+  color: rgb(192, 192, 192);
+}
+
+nav {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(237, 237, 237);
+}
+
+.nav_wechat,
+.nav_friends,
+.nav_find,
+.nav_me {
+  width: 25%;
+  text-align: center;
+  font-size: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav img {
+  width: 4.5rem;
+}
+
+.friends {
+  margin-top: 10rem;
+  background-color: rgb(237, 237, 237);
+}
+
+.friends_classify li {
+  display: flex;
+  font-size: 3rem;
+  align-items: center;
+  background-color: #fff;
+}
+
+.friends_classify li > div:nth-child(2) {
+  border-bottom: 0.2rem solid rgb(237, 237, 237);
+  padding: 3rem 0;
+  flex-grow: 1;
+}
+
+.friends_classify_img {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: rgb(250, 158, 59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 2rem;
+  border-radius: 1rem;
+}
+
+.friends_classify li:nth-child(2) > .friends_classify_img {
+  background-color: rgb(7, 193, 96);
+}
+
+.friends_classify li:nth-child(3) > .friends_classify_img,
+.friends_classify li:nth-child(4) > .friends_classify_img {
+  background-color: rgb(39, 129, 215);
+}
+
+.friends_classify img {
+  width: 4rem;
+}
+
+.friends {
+  margin-bottom: 10rem;
+}
+
+.friends_list_index {
+  margin-left: 2.5rem;
+  font-size: 2.2rem;
+  color: rgb(106, 106, 106);
+  padding: 1.5rem 0;
+}
+
+.friends_list_people {
+  background-color: #fff;
+  padding: 1.5rem 0;
+  display: flex;
+  /* background-color: aqua; */
+  align-items: center;
+}
+
+.friends_list_people img {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0 2.5rem;
+  border-radius: 1rem;
+}
+
+.friends_list_people_name {
+  font-size: 3rem;
+}
+
+.friends_nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 2.2rem;
+  height: 75rem;
+  font-size: 2.2rem;
+  text-align: center;
+  z-index: 99;
+}

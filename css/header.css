@@ -1,0 +1,52 @@
+header {
+  background-color: rgb(237, 237, 237);
+  height: 10rem;
+  width: 100%;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+header > div {
+  display: flex;
+}
+
+.back,
+.chat_more,
+.index_more,
+.passage_more {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/back.png) no-repeat;
+  background-size: contain;
+  margin: 0.5rem 2.5rem;
+}
+
+.index_more {
+  background: url(../img/more.png) no-repeat;
+  background-size: contain;
+  margin: 0 2.5rem;
+}
+
+.passage_more {
+  background: url(../img/unfold.png) no-repeat;
+  background-size: contain;
+  margin: 0 2.5rem;
+}
+
+.chat_more {
+  background: url(../img/chat_more.png) no-repeat;
+  background-size: contain;
+}
+
+.search {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/search.png) no-repeat;
+  background-size: contain;
+}

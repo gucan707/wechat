@@ -98,6 +98,10 @@ nav img {
   flex-grow: 1;
 }
 
+.friends_classify li:nth-child(4) > div:nth-child(2) {
+  border: none;
+}
+
 .friends_classify_img {
   width: 7.5rem;
   height: 7.5rem;
@@ -154,13 +158,26 @@ nav img {
 
 .friends_nav {
   position: fixed;
-  right: 0;
+  right: 1rem;
   top: 0;
   bottom: 0;
   margin: auto;
-  width: 2.2rem;
-  height: 75rem;
-  font-size: 2.2rem;
+  width: 2rem;
+  height: 77rem;
+  font-size: 2rem;
   text-align: center;
   z-index: 99;
 }
+
+.friends_nav > li:nth-child(1) > a::after {
+  content: "\2191";
+}
+
+.friends_nav > li:nth-child(2) > a::after {
+  content: "\2605";
+}
+
+/* .friends_nav a {
+  width: 2rem;
+  height: 2rem;
+} */

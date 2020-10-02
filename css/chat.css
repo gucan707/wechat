@@ -42,18 +42,21 @@ body {
 }
 
 .content {
-  margin: 10rem 0;
+  margin: 12.5rem 0;
 }
 
 .content_me,
 .content_friend {
   display: flex;
   margin-bottom: 2rem;
+  padding-left: 2.5rem;
 }
 
 .content_me {
   display: flex;
   justify-content: flex-end;
+  padding-left: 0;
+  padding-right: 2.5rem;
 }
 
 .content_me_words,

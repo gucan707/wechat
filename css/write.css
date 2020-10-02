@@ -1,0 +1,84 @@
+header {
+  background-color: #fff;
+}
+.push {
+  background-color: rgb(2, 195, 96);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  margin-right: 2.5rem;
+}
+
+.input {
+  margin-top: 10rem;
+  padding: 2rem 3rem;
+}
+
+.input_choosed-img {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.input_choosed-img img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.input_text {
+  width: 100%;
+  height: 25rem;
+  /* background-color: aqua; */
+  font-size: 3rem;
+}
+
+.input_img {
+  width: 20rem;
+  height: 20rem;
+  background: url(../img/choose-img.png) no-repeat;
+  background-size: contain;
+}
+
+.settings {
+  padding: 0 5rem;
+  padding-top: 3rem;
+}
+
+.settings li {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.settings_ico img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.settings_describe {
+  padding: 2rem 3rem;
+  border-bottom: 0.2rem solid rgb(237, 237, 237);
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings_describe_ico::after {
+  content: ">";
+  color: rgb(170, 170, 170);
+}
+
+.qq {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 3rem;
+}
+
+#img + label::after {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 3rem;
+  border: 0.1rem black solid;
+}

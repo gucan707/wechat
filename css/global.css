@@ -49,9 +49,14 @@
   }
 }
 
-input {
+input,
+textarea {
   outline: none;
   border: none;
+}
+
+textarea {
+  resize: none;
 }
 
 ul,
@@ -59,4 +64,9 @@ li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

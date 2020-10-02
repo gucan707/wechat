@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(237, 237, 237);
+  background-color: rgba(237, 237, 237, 1);
   height: 10rem;
   width: 100%;
   font-size: 3rem;
@@ -18,13 +18,29 @@ header > div {
 .back,
 .chat_more,
 .index_more,
-.passage_more {
+.passage_more,
+.camera {
   display: block;
   width: 3rem;
   height: 3rem;
   background: url(../img/back.png) no-repeat;
   background-size: contain;
   margin: 0.5rem 2.5rem;
+}
+
+.back.white {
+  background: url(../img/back_white.png) no-repeat;
+  background-size: contain;
+}
+
+.camera {
+  background: url(../img/camera_black.png) no-repeat;
+  background-size: contain;
+}
+
+.camera.white {
+  background: url(../img/camera_white.png) no-repeat;
+  background-size: contain;
 }
 
 .index_more {

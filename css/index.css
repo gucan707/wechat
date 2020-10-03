@@ -3,15 +3,21 @@ header > span {
   display: flex;
 }
 
+body {
+  background-color: rgb(237, 237, 237);
+}
+
 .title {
   padding-left: 2.5rem;
 }
 
-.chat {
+.page {
   margin: 10rem 0;
+  background-color: rgb(237, 237, 237);
 }
 
 .chat_list {
+  background-color: #fff;
   height: 12.5rem;
   /* background-color: rgb(247, 247, 247); */
   display: flex;
@@ -23,8 +29,11 @@ header > span {
   background: url(../img/myPhoto.jpg) no-repeat;
   background-size: contain;
   margin: 2rem 2.5rem;
-  /* border: 0.3rem solid rgb(231, 232, 232);
-  border-radius: 1rem; */
+}
+
+.page > .chat_list:nth-child(1) > .chat_list_photo {
+  background: url(../img/follow.png) no-repeat;
+  background-size: contain;
 }
 
 .chat_list_info {
@@ -64,10 +73,7 @@ nav {
   background-color: rgb(237, 237, 237);
 }
 
-.nav_wechat,
-.nav_friends,
-.nav_find,
-.nav_me {
+.nav {
   width: 25%;
   text-align: center;
   font-size: 2.2rem;
@@ -76,13 +82,12 @@ nav {
   justify-content: center;
 }
 
-nav img {
-  width: 4.5rem;
+.nav.green {
+  color: #06c05f;
 }
 
-.friends {
-  margin-top: 10rem;
-  background-color: rgb(237, 237, 237);
+nav img {
+  width: 4.5rem;
 }
 
 .friends_classify li {
@@ -177,7 +182,86 @@ nav img {
   content: "\2605";
 }
 
-/* .friends_nav a {
-  width: 2rem;
-  height: 2rem;
-} */
+.find li {
+  display: flex;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  font-size: 2.8rem;
+  border-bottom: 0.1rem solid rgb(237, 237, 237);
+}
+
+.find .find_ico {
+  width: 4rem;
+  height: 4rem;
+  background: url(../img/moments.png) no-repeat;
+  background-size: contain;
+  padding-right: 2.5rem;
+}
+
+.find > li:nth-child(2) > .find_ico {
+  background: url(../img/video.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(3) > .find_ico {
+  background: url(../img/scan.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(4) > .find_ico {
+  background: url(../img/shake.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(5) > .find_ico {
+  background: url(../img/browse.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(6) > .find_ico {
+  background: url(../img/find_search.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(7) > .find_ico {
+  background: url(../img/nearby.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(8) > .find_ico {
+  background: url(../img/buy.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(9) > .find_ico {
+  background: url(../img/game.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(10) > .find_ico {
+  background: url(../img/mini_program.png) no-repeat;
+  background-size: contain;
+}
+
+.find > li:nth-child(1),
+.find > li:nth-child(2),
+.find > li:nth-child(4),
+.find > li:nth-child(6),
+.find > li:nth-child(7),
+.find > li:nth-child(9),
+.find > li:nth-child(10) {
+  margin-bottom: 1.5rem;
+  border: none;
+}
+
+.find_describe {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.find_describe_ico::after {
+  content: ">";
+  color: rgb(192, 192, 192);
+}

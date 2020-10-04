@@ -1,0 +1,24 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "完成了Level 1和Level 2，Level 3刚起步，在通讯录页面上",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gucan707/wechat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gucan707/wechat/issues"
+  },
+  "homepage": "https://github.com/gucan707/wechat#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^5.0.0-alpha.8",
+    "mongoose": "^5.10.7"
+  }
+}

@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(237, 237, 237);
+  font-size: 3rem;
+}
+
+nav {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+}
+
+nav div {
+  line-height: 10rem;
+  width: 50%;
+  text-align: center;
+}
+
+nav > .checked {
+  border-bottom: 0.2rem solid rgb(2, 195, 96);
+}
+
+.info {
+  display: flex;
+  padding: 5rem 0;
+  margin: 0 3rem;
+  border-bottom: 0.1rem white solid;
+}
+
+.info > div {
+  width: 20rem;
+}
+
+input {
+  font-size: 3rem;
+  background-color: rgb(237, 237, 237);
+}
+
+button {
+  background-color: rgb(2, 195, 96);
+  color: white;
+  padding: 2rem 3rem;
+  border: none;
+  font-size: 3rem;
+  border-radius: 1rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+}

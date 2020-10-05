@@ -71,6 +71,7 @@ imgBtn.addEventListener("change", imgShow);
 const inputOri = document.querySelector(".input").cloneNode(true);
 const push = document.querySelector(".push");
 push.addEventListener("click", function () {
+  momentsSave();
   let text = document.querySelector(".input_text");
   let imgChoosed = document.querySelectorAll(".input_choosed-img>img");
   if (imgChoosed.length || text.value) {
@@ -128,7 +129,7 @@ push.addEventListener("click", function () {
     show.className = "show";
     write.className = "write hidden";
     momentsFold(); // 更新展开收起按键
-    enlarge(); //更新能放大的图片
+    enlarge(); // 更新能放大的图片
   }
 });
 
@@ -167,4 +168,81 @@ function enlarge() {
       });
     });
   }
+}
+
+document.onreadystatechange = function (event) {
+  if (document.readyState === "complete") {
+    window.addEventListener("message", function (event) {
+      if (event.origin !== "http://localhost:3001") {
+        return;
+      }
+      console.log("message:", event.data);
+      console.log("origin:", event.source);
+      let username = document.querySelector(".user_info_name");
+      username.innerText = event.data.username;
+
+      // 将曾经储存在数据库中的信息显示到朋友圈
+      momentsPast(event.data.moments, event.data.img);
+    });
+  }
+};
+
+// 存储发布的朋友圈
+function momentsSave() {
+  let xhr = new XMLHttpRequest();
+  let username = document.querySelector(".user_info_name").innerText;
+  let moments =
+    "username=" +
+    username +
+    "&content=" +
+    document.querySelector("textarea").value;
+  console.log(moments);
+  xhr.open("post", "http://localhost:3001/moments");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send(moments);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+      console.log(xhr.responseText);
+    }
+  };
+}
+
+// 加载过去的朋友圈
+function momentsPast(text, img) {
+  for (let i = 0; i < text.length; i++) {
+    let momentsList = document.querySelectorAll(".moments_info");
+    let myMoments = momentsList[0].cloneNode(true);
+    myMoments.querySelector(
+      ".moments_info_text_name"
+    ).innerText = document.querySelector(".user_info_name").innerText;
+    myMoments.querySelector(".moments_info_text_content").innerText = text[i];
+    myMoments.querySelector(".moments_info_photo").src = document.querySelector(
+      ".user_info_photo>img"
+    ).src;
+
+    moments.appendChild(myMoments);
+  }
+}
+
+// 上传图片
+imgUpload();
+function imgUpload() {
+  let file = document.querySelector("#imgBtn");
+  file.addEventListener("change", function () {
+    let formData = new FormData();
+    formData.append("imgs", this.files[0]);
+    formData.set(
+      "username",
+      document.querySelector(".user_info_name").innerText
+    );
+    let xhr = new XMLHttpRequest();
+    xhr.open("post", "http://localhost:3001/upload");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(formData);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+        console.log(JSON.parse(xhr.responseText));
+      }
+    };
+  });
 }

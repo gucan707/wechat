@@ -11,8 +11,9 @@ const User = mongoose.model(
     username: { type: String, unique: true },
     password: { type: String },
     moments: { type: Array },
-    img: { type: Array },
+    img: { type: [{ type: Array }] },
     photo: { type: String },
+    status: { type: String },
   })
 );
 

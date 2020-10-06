@@ -24,8 +24,9 @@ if (btn) {
           thisUser = xhr.responseText;
           sendMessage(
             xhr.responseText,
-            "http://localhost:3001/html/moments.html"
+            "http://localhost:3001/html/index.html"
           );
+          // window.location.href = "http://localhost:3001/html/index.html";
         }
       }
     };

@@ -64,3 +64,57 @@ for (let i = 0; i < navBtns.length; i++) {
     }
   });
 }
+
+var username = "";
+document.onreadystatechange = function (event) {
+  if (document.readyState === "complete") {
+    window.addEventListener("message", function (event) {
+      if (event.origin !== "http://localhost:3001") {
+        return;
+      }
+      username = event.data.username;
+      onlineUser(username);
+
+      console.log("message:", event.data);
+      console.log("origin:", event.source);
+    });
+  }
+};
+
+// 聊天界面发送消息（level 2）
+const input = document.querySelector("input");
+const content = document.querySelector(".content");
+
+document.addEventListener("keyup", function (e) {
+  if (e.key == "Enter" && input.value) {
+    let myContent = document.querySelector(".content_me");
+    let myNewContent = myContent.cloneNode(true);
+    let myNewWords = myNewContent.querySelector(".content_me_words");
+
+    myNewWords.innerText = input.value;
+    toServer(username, myNewWords.innerText, "小红");
+    let update = content.appendChild(myNewContent);
+    input.value = "";
+    update.scrollIntoView();
+  }
+});
+
+var socket = io();
+console.log(socket);
+function toServer(name, message, receiver) {
+  // socket.emit("send", message);
+  socket.emit("message", {
+    message: message,
+    username: name,
+    receiver: receiver,
+  });
+  // socket.on("toClient");
+}
+
+function onlineUser(name) {
+  socket.emit("online", { username: name, socketID: socket.id });
+}
+
+socket.on("toSomeone", function (message) {
+  console.log(message);
+});

@@ -7,303 +7,356 @@
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/chat.css" />
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <header>
-      <span class="title">微信</span>
-      <span>
-        <div class="search"></div>
-        <div class="index_more"></div>
-      </span>
-    </header>
+    <div class="index-page hidden">
+      <header>
+        <span class="title">微信</span>
+        <span>
+          <div class="search"></div>
+          <div class="index_more"></div>
+        </span>
+      </header>
 
-    <div class="page">
-      <div class="chat_list">
-        <div class="chat_list_photo"></div>
-        <a href="passage.html" class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">订阅号消息</div>
-            <div class="chat_list_info_time">19:00</div>
+      <div class="page">
+        <div class="chat_list">
+          <div class="chat_list_photo"></div>
+          <a href="passage.html" class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">订阅号消息</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </a>
+        </div>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">2号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
           </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
+        </a>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">3号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </div>
+        </a>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">4号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </div>
+        </a>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">5号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </div>
+        </a>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">5号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </div>
+        </a>
+
+        <a href="chat.html" class="chat_list">
+          <div class="chat_list_photo"></div>
+          <div class="chat_list_info">
+            <div>
+              <div class="chat_list_info_name">5号朋友</div>
+              <div class="chat_list_info_time">19:00</div>
+            </div>
+            <div class="chat_list_info_message">这是最后一条信息</div>
+          </div>
         </a>
       </div>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">2号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
-        </div>
-      </a>
+      <div class="page hidden">
+        <ul class="friends_classify">
+          <li>
+            <div class="friends_classify_img">
+              <img src="../img/friend_add_fill.png" />
+            </div>
+            <div>新的朋友</div>
+          </li>
+          <li>
+            <div class="friends_classify_img">
+              <img src="../img/group.png" />
+            </div>
+            <div>群聊</div>
+          </li>
+          <li>
+            <div class="friends_classify_img">
+              <img src="../img/tag.png" />
+            </div>
+            <div>标签</div>
+          </li>
+          <li>
+            <div class="friends_classify_img">
+              <img src="../img/official.png" />
+            </div>
+            <div>公众号</div>
+          </li>
+        </ul>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">3号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
-        </div>
-      </a>
+        <div class="friends_list">
+          <ul>
+            <li class="friends_list_index">我的企业及企业联系人</li>
+            <li class="friends_list_people">
+              <img src="../img/8C029A6E2FA0C3F6385D1DEB43C88AE4.jpg" />
+              <div class="friends_list_people_name">华中大微校园</div>
+            </li>
+          </ul>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">4号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
-        </div>
-      </a>
+          <ul>
+            <li class="friends_list_index">A</li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">阿伟死了</div>
+            </li>
+          </ul>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">5号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
-        </div>
-      </a>
+          <ul>
+            <li class="friends_list_index">B</li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">贝塔</div>
+            </li>
+          </ul>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">5号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
-        </div>
-      </a>
+          <ul>
+            <li class="friends_list_index">C</li>
+            <li class="friends_list_people">
+              <img src="../img/myPhoto.jpg" />
+              <div class="friends_list_people_name">茨安</div>
+            </li>
 
-      <a href="chat.html" class="chat_list">
-        <div class="chat_list_photo"></div>
-        <div class="chat_list_info">
-          <div>
-            <div class="chat_list_info_name">5号朋友</div>
-            <div class="chat_list_info_time">19:00</div>
-          </div>
-          <div class="chat_list_info_message">这是最后一条信息</div>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">测试一下</div>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="friends_list_index">M</li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+            <li class="friends_list_people">
+              <img src="../img/friend_photo.jpg" />
+              <div class="friends_list_people_name">名字</div>
+            </li>
+          </ul>
         </div>
-      </a>
+
+        <ul class="friends_nav">
+          <li><a href="#top"></a></li>
+          <li><a href="#star"></a></li>
+        </ul>
+      </div>
+
+      <div class="page hidden">
+        <ul class="find">
+          <li>
+            <div class="find_ico"></div>
+            <a href="moments.html" class="find_describe">
+              朋友圈
+              <div class="find_describe_ico"></div>
+            </a>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              视频号
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              扫一扫
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              摇一摇
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              看一看
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              搜一搜
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              附近的人
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              购物
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              游戏
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+          <li>
+            <div class="find_ico"></div>
+            <div class="find_describe">
+              小程序
+              <div class="find_describe_ico"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="page hidden"></div>
+
+      <nav>
+        <div class="nav green">
+          <div class="nav_ico">
+            <img src="../img/message_check.png" />
+          </div>
+          <div>微信</div>
+        </div>
+
+        <div class="nav">
+          <div class="nav_ico">
+            <img src="../img/friends.png" />
+          </div>
+          <div>通讯录</div>
+        </div>
+
+        <div class="nav">
+          <div class="nav_ico">
+            <img src="../img/find.png" />
+          </div>
+          <div>发现</div>
+        </div>
+
+        <div class="nav">
+          <div class="nav_ico">
+            <img src="../img/me.png" />
+          </div>
+          <div>我</div>
+        </div>
+      </nav>
     </div>
 
-    <div class="page hidden">
-      <ul class="friends_classify">
-        <li>
-          <div class="friends_classify_img">
-            <img src="../img/friend_add_fill.png" />
+    <div class="chat-page">
+      <header>
+        <div>
+          <a href="index.html" class="back"></a>
+          <div class="name">1号朋友</div>
+        </div>
+        <div class="chat_more"></div>
+      </header>
+
+      <div class="content">
+        <div class="content_me">
+          <div class="content_me_words">发一条消息</div>
+          <div>
+            <div class="content_me_triangle"></div>
+            <div class="content_me_photo">
+              <img src="../img/myPhoto.jpg" />
+            </div>
           </div>
-          <div>新的朋友</div>
-        </li>
-        <li>
-          <div class="friends_classify_img">
-            <img src="../img/group.png" />
+        </div>
+
+        <div class="content_friend">
+          <div>
+            <div class="content_friend_photo">
+              <img src="../img/friend_photo.jpg" />
+            </div>
+            <div class="content_friend_triangle"></div>
           </div>
-          <div>群聊</div>
-        </li>
-        <li>
-          <div class="friends_classify_img">
-            <img src="../img/tag.png" />
+          <div class="content_friend_words">发一条消息</div>
+        </div>
+
+        <div class="content_friend">
+          <div>
+            <div class="content_friend_photo">
+              <img src="../img/friend_photo.jpg" />
+            </div>
+            <div class="content_friend_triangle"></div>
           </div>
-          <div>标签</div>
-        </li>
-        <li>
-          <div class="friends_classify_img">
-            <img src="../img/official.png" />
-          </div>
-          <div>公众号</div>
-        </li>
-      </ul>
-
-      <div class="friends_list">
-        <ul>
-          <li class="friends_list_index">我的企业及企业联系人</li>
-          <li class="friends_list_people">
-            <img src="../img/8C029A6E2FA0C3F6385D1DEB43C88AE4.jpg" />
-            <div class="friends_list_people_name">华中大微校园</div>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="friends_list_index">A</li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">阿伟死了</div>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="friends_list_index">B</li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">贝塔</div>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="friends_list_index">C</li>
-          <li class="friends_list_people">
-            <img src="../img/myPhoto.jpg" />
-            <div class="friends_list_people_name">茨安</div>
-          </li>
-
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">测试一下</div>
-          </li>
-        </ul>
-
-        <ul>
-          <li class="friends_list_index">M</li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-          <li class="friends_list_people">
-            <img src="../img/friend_photo.jpg" />
-            <div class="friends_list_people_name">名字</div>
-          </li>
-        </ul>
+          <div class="content_friend_words">发一条消息</div>
+        </div>
       </div>
 
-      <ul class="friends_nav">
-        <li><a href="#top"></a></li>
-        <li><a href="#star"></a></li>
-      </ul>
+      <div class="input">
+        <div class="input_speak"></div>
+        <input />
+        <div class="input_emoji"></div>
+        <div class="input_more"></div>
+      </div>
     </div>
-
-    <div class="page hidden">
-      <ul class="find">
-        <li>
-          <div class="find_ico"></div>
-          <a href="moments.html" class="find_describe">
-            朋友圈
-            <div class="find_describe_ico"></div>
-          </a>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            视频号
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            扫一扫
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            摇一摇
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            看一看
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            搜一搜
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            附近的人
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            购物
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            游戏
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-        <li>
-          <div class="find_ico"></div>
-          <div class="find_describe">
-            小程序
-            <div class="find_describe_ico"></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="page hidden"></div>
-
-    <nav>
-      <div class="nav green">
-        <div class="nav_ico">
-          <img src="../img/message_check.png" />
-        </div>
-        <div>微信</div>
-      </div>
-
-      <div class="nav">
-        <div class="nav_ico">
-          <img src="../img/friends.png" />
-        </div>
-        <div>通讯录</div>
-      </div>
-
-      <div class="nav">
-        <div class="nav_ico">
-          <img src="../img/find.png" />
-        </div>
-        <div>发现</div>
-      </div>
-
-      <div class="nav">
-        <div class="nav_ico">
-          <img src="../img/me.png" />
-        </div>
-        <div>我</div>
-      </div>
-    </nav>
-
     <script src="../js/index.js"></script>
+    <!-- <script src="../js/chat.js"></script> -->
   </body>
 </html>

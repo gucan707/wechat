@@ -187,7 +187,7 @@ document.onreadystatechange = function (event) {
   }
 };
 
-// 存储发布的朋友圈
+// 存储发布的朋友圈文字
 function momentsSave() {
   let xhr = new XMLHttpRequest();
   let username = document.querySelector(".user_info_name").innerText;
@@ -211,7 +211,9 @@ function momentsSave() {
 function momentsPast(text, img) {
   for (let i = 0; i < text.length; i++) {
     let momentsList = document.querySelectorAll(".moments_info");
-    let myMoments = momentsList[0].cloneNode(true);
+    let myMoments = momentsList[momentsList.length - 1].cloneNode(true);
+    console.log(myMoments);
+
     myMoments.querySelector(
       ".moments_info_text_name"
     ).innerText = document.querySelector(".user_info_name").innerText;
@@ -220,6 +222,35 @@ function momentsPast(text, img) {
       ".user_info_photo>img"
     ).src;
 
+    for (let j = 0; j < img.length; j++) {
+      let imgSrc = img[i][j];
+      // console.log(imgSrc);
+      let imgNode = document.createElement("div");
+      let myMomentsImgBox = document.createElement("div");
+      myMoments
+        .querySelector(".moments_info_text")
+        .removeChild(myMoments.querySelector(".moments_info_text_img"));
+      // console.log(myMoments);
+
+      myMomentsImgBox.className = "moments_info_text_img";
+      myMoments
+        .querySelector(".moments_info_text")
+        .appendChild(myMomentsImgBox);
+      // console.log(myMoments);
+
+      if (imgSrc) {
+        console.log(i + ":" + imgSrc);
+        imgSrc = imgSrc.replace(/\\/g, "/");
+        imgNode.style.backgroundImage = "url(" + imgSrc + ")";
+        console.log("ok");
+      }
+      if (img.length > 1) {
+        imgNode.className = "miti_img plural";
+      } else {
+        imgNode.className = "miti_img";
+      }
+      myMomentsImgBox.appendChild(imgNode);
+    }
     moments.appendChild(myMoments);
   }
 }
@@ -237,11 +268,10 @@ function imgUpload() {
     );
     let xhr = new XMLHttpRequest();
     xhr.open("post", "http://localhost:3001/upload");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(formData);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
-        console.log(JSON.parse(xhr.responseText));
+        console.log(xhr.responseText);
       }
     };
   });

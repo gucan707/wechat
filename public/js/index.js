@@ -175,36 +175,34 @@ socket.on("toSomeone", function (data) {
     if (xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
       let friendInfo = JSON.parse(xhr.responseText); // 发送方信息
       console.log(friendInfo);
-      // fromFriend(data.message, friendInfo);
+      fromFriend(data.message);
     }
   };
 });
 function fromFriend(message) {
-  if (
-    document.querySelector(".chat-page").className != "chat-page hidden" &&
-    document.querySelector(".name").innerText == chatFriend.username
-  ) {
-    console.log("发送消息");
-    receiveMessage = message;
-    let friendContent = document.querySelector(".content_friend");
-    let friendNewContent = friendContent.cloneNode(true);
-    friendNewContent.className = "content_friend";
-    let friendNewWords = friendNewContent.querySelector(
-      ".content_friend_words"
-    );
-    friendNewWords.innerText = message;
-    let friendPhoto = chatFriend.photo
-      ? chatFriend.photo.replace(/\\/g, "/")
-      : "../img/myPhoto.jpg";
-    friendNewContent.querySelector("img").src = friendPhoto;
-    let update = content.appendChild(friendNewContent);
-    let name = document.querySelector(".name").innerText;
-    messageSave(username, name, message, true);
-    update.scrollIntoView();
-  } else {
-    console.log(chatFriend.username);
-    messageSave(username, chatFriend.username, message, true);
-  }
+  // if (
+  //   document.querySelector(".chat-page").className != "chat-page hidden" &&
+  //   document.querySelector(".name").innerText == chatFriend.username
+  // ) {
+  console.log("发送消息");
+  receiveMessage = message;
+  let friendContent = document.querySelector(".content_friend");
+  let friendNewContent = friendContent.cloneNode(true);
+  friendNewContent.className = "content_friend";
+  let friendNewWords = friendNewContent.querySelector(".content_friend_words");
+  friendNewWords.innerText = message;
+  let friendPhoto = chatFriend.photo
+    ? chatFriend.photo.replace(/\\/g, "/")
+    : "../img/myPhoto.jpg";
+  friendNewContent.querySelector("img").src = friendPhoto;
+  let update = content.appendChild(friendNewContent);
+  let name = document.querySelector(".name").innerText;
+  messageSave(username, name, message, true);
+  update.scrollIntoView();
+  // } else {
+  console.log(chatFriend.username);
+  messageSave(username, chatFriend.username, message, true);
+  // }
 }
 
 var userList = [];

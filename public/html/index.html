@@ -11,7 +11,7 @@
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <div class="index-page hidden">
+    <div class="index-page">
       <header>
         <span class="title">微信</span>
         <span>
@@ -20,10 +20,10 @@
         </span>
       </header>
 
-      <div class="page">
+      <div class="page" id="chat-index">
         <div class="chat_list">
           <div class="chat_list_photo"></div>
-          <a href="passage.html" class="chat_list_info">
+          <a href="passage.html" target="_blank" class="chat_list_info">
             <div>
               <div class="chat_list_info_name">订阅号消息</div>
               <div class="chat_list_info_time">19:00</div>
@@ -31,72 +31,6 @@
             <div class="chat_list_info_message">这是最后一条信息</div>
           </a>
         </div>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">2号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">3号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">4号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">5号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">5号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
-
-        <a href="chat.html" class="chat_list">
-          <div class="chat_list_photo"></div>
-          <div class="chat_list_info">
-            <div>
-              <div class="chat_list_info_name">5号朋友</div>
-              <div class="chat_list_info_time">19:00</div>
-            </div>
-            <div class="chat_list_info_message">这是最后一条信息</div>
-          </div>
-        </a>
       </div>
 
       <div class="page hidden">
@@ -204,10 +138,10 @@
         <ul class="find">
           <li>
             <div class="find_ico"></div>
-            <a href="moments.html" class="find_describe">
+            <div class="find_describe">
               朋友圈
               <div class="find_describe_ico"></div>
-            </a>
+            </div>
           </li>
           <li>
             <div class="find_ico"></div>
@@ -275,7 +209,16 @@
         </ul>
       </div>
 
-      <div class="page hidden"></div>
+      <div class="page hidden">
+        <div class="me">
+        <label for="photo" class="me_photo">
+          <img src="../img/myPhoto.jpg">
+        </label>
+        <div>名字</div>
+      </div>
+      <div class="exit">退出登录</div>
+        <input type="file" id="photo" class="hidden" />
+      </div>
 
       <nav>
         <div class="nav green">
@@ -308,46 +251,35 @@
       </nav>
     </div>
 
-    <div class="chat-page">
+    <div class="chat-page hidden">
       <header>
         <div>
-          <a href="index.html" class="back"></a>
+          <div class="back"></div>
           <div class="name">1号朋友</div>
         </div>
         <div class="chat_more"></div>
       </header>
 
       <div class="content">
-        <div class="content_me">
-          <div class="content_me_words">发一条消息</div>
+        <div class="content_me hidden">
+          <div class="content_me_words"></div>
           <div>
             <div class="content_me_triangle"></div>
             <div class="content_me_photo">
-              <img src="../img/myPhoto.jpg" />
+              <img />
             </div>
           </div>
         </div>
 
-        <div class="content_friend">
+        <div class="content_friend hidden">
           <div>
             <div class="content_friend_photo">
-              <img src="../img/friend_photo.jpg" />
+              <img />
             </div>
             <div class="content_friend_triangle"></div>
           </div>
           <div class="content_friend_words">发一条消息</div>
         </div>
-
-        <div class="content_friend">
-          <div>
-            <div class="content_friend_photo">
-              <img src="../img/friend_photo.jpg" />
-            </div>
-            <div class="content_friend_triangle"></div>
-          </div>
-          <div class="content_friend_words">发一条消息</div>
-        </div>
-      </div>
 
       <div class="input">
         <div class="input_speak"></div>

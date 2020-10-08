@@ -170,16 +170,20 @@ function enlarge() {
   }
 }
 
+var momentsData;
 document.onreadystatechange = function (event) {
   if (document.readyState === "complete") {
     window.addEventListener("message", function (event) {
       if (event.origin !== "http://localhost:3001") {
         return;
       }
-      console.log("message:", event.data);
-      console.log("origin:", event.source);
+      momentsData = event.data;
       let username = document.querySelector(".user_info_name");
+      let userPhoto = document.querySelector(".user_info_photo img");
       username.innerText = event.data.username;
+      userPhoto.src = event.data.photo
+        ? event.data.photo
+        : "../img/myPhoto.jpg";
 
       // 将曾经储存在数据库中的信息显示到朋友圈
       momentsPast(event.data.moments, event.data.img);
@@ -210,49 +214,51 @@ function momentsSave() {
 // 加载过去的朋友圈
 function momentsPast(text, img) {
   for (let i = 0; i < text.length; i++) {
-    let momentsList = document.querySelectorAll(".moments_info");
-    let myMoments = momentsList[momentsList.length - 1].cloneNode(true);
-    console.log(myMoments);
+    let photoPath = momentsData.photo
+      ? momentsData.photo
+      : "../img/myPhoto.jpg";
+    let str =
+      '<div class="moments_info">\
+      <img class="moments_info_photo" src="' +
+      photoPath +
+      '" />\
+      <div class="moments_info_text">\
+        <div class="moments_info_text_name">' +
+      momentsData.username +
+      '</div>\
+        <div class="moments_info_text_content">' +
+      text[i] +
+      '</div>\
+        <div class="moments_info_text_unfold">展开</div>\
+        <div class="moments_info_text_img">\
+        </div>\
+      </div>\
+    </div>';
 
-    myMoments.querySelector(
-      ".moments_info_text_name"
-    ).innerText = document.querySelector(".user_info_name").innerText;
-    myMoments.querySelector(".moments_info_text_content").innerText = text[i];
-    myMoments.querySelector(".moments_info_photo").src = document.querySelector(
-      ".user_info_photo>img"
-    ).src;
-
-    for (let j = 0; j < img.length; j++) {
-      let imgSrc = img[i][j];
-      // console.log(imgSrc);
-      let imgNode = document.createElement("div");
-      let myMomentsImgBox = document.createElement("div");
-      myMoments
-        .querySelector(".moments_info_text")
-        .removeChild(myMoments.querySelector(".moments_info_text_img"));
-      // console.log(myMoments);
-
-      myMomentsImgBox.className = "moments_info_text_img";
-      myMoments
-        .querySelector(".moments_info_text")
-        .appendChild(myMomentsImgBox);
-      // console.log(myMoments);
-
-      if (imgSrc) {
-        console.log(i + ":" + imgSrc);
-        imgSrc = imgSrc.replace(/\\/g, "/");
-        imgNode.style.backgroundImage = "url(" + imgSrc + ")";
-        console.log("ok");
+    let moments = document.querySelector(".moments");
+    moments.insertAdjacentHTML("beforeend", str);
+    let imgBox = moments.querySelectorAll(".moments_info_text_img");
+    if (img[i]) {
+      for (let j = 0; j < img[i].length; j++) {
+        // console.log(img[i][j]);
+        if (img[i][j]) {
+          console.log(img[i][j]);
+          let imgSrc = img[i][j].replace(/\\/g, "/");
+          console.log(imgSrc);
+          let imgNode = document.createElement("div");
+          imgNode.style.backgroundImage = "url(" + imgSrc + ")";
+          if (img[i].length > 1) {
+            imgNode.className = "miti_img plural";
+          } else {
+            imgNode.className = "miti_img";
+          }
+          imgBox[imgBox.length - 1].appendChild(imgNode);
+        }
       }
-      if (img.length > 1) {
-        imgNode.className = "miti_img plural";
-      } else {
-        imgNode.className = "miti_img";
-      }
-      myMomentsImgBox.appendChild(imgNode);
     }
-    moments.appendChild(myMoments);
   }
+  momentsFold(); // 更新展开收起按键
+  enlarge(); // 更新能放大的图片
 }
 
 // 上传图片

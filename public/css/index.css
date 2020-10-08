@@ -26,7 +26,8 @@ body {
 .chat_list_photo {
   width: 8.5rem;
   height: 8.5rem;
-  background: url(../img/myPhoto.jpg) no-repeat;
+  background: url(../img/myPhoto.jpg);
+  background-repeat: no-repeat;
   background-size: contain;
   margin: 2rem 2.5rem;
 }
@@ -264,4 +265,25 @@ nav img {
 .find_describe_ico::after {
   content: ">";
   color: rgb(192, 192, 192);
+}
+
+.me_photo img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.me {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.exit {
+  background-color: red;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 5rem;
+  margin: 0 20rem;
+  margin-top: 40rem;
 }
